@@ -26,6 +26,23 @@ CREATE TABLE Ventes (
     MontantTotal DECIMAL(10, 2)
 );
 
+CREATE TABLE Fournisseurs (
+	FournisseurID INT PRIMARY KEY,
+    NomFournisseur VARCHAR(200),
+    Adresse VARCHAR(100),
+    Email VARCHAR(200),
+    NumeroTelephone VARCHAR(200)
+    ) ;
+    
+    CREATE TABLE Employes (
+	EmployeID INT PRIMARY KEY,
+    Nom VARCHAR(200),
+    Prenom VARCHAR(200),
+    Fonction VARCHAR(200),
+    Email VARCHAR(200),
+    NuméroTelephone VARCHAR(200)
+    ) ;
+    
 -- Insertion de données de démonstration dans la table "Clients"
 INSERT INTO Clients (ClientID, Nom, Prenom, Adresse, Email, NumeroTelephone)
 VALUES
