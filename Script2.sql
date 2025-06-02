@@ -1,14 +1,4 @@
-/*======================================================*/
-/*                 Maîtriser la clause SELECT           */
-/*======================================================*/
 
-/*======================================================*/
-/* Fonctionnalité 1: Sélectionner toutes les informations d'une table 
-Syntaxe générale:
-SELECT *
-FROM nom_table;
-*/
-/*======================================================*/
 
 -- QUESTION 1: Donner la table complète des produits vendus par l'entreprise 
 SELECT *
@@ -18,13 +8,7 @@ FROM Produits;
 SELECT *
 FROM Clients;
 
-/*======================================================*/
-/* Fonctionnalité 2: Sélectionner une seule colonne
-Syntaxe générale:
-SELECT nom_colonne
-FROM nom_table;
-*/
-/*======================================================*/
+
 
 -- QUESTION 3: Donner le nom de tous les produits de la base de données
 SELECT NomProduit
@@ -39,12 +23,6 @@ FROM Fournisseurs;
 SELECT NomFournisseur, FournisseurID,Email, Adresse
 FROM Fournisseurs;
  
-/*======================================================*/
-/* Fonctionnalité 3: Sélectionner deux ou plusieurs colonnes
-Syntaxe générale:
-SELECT nom_colonne1, nom_colonne2,..., nom_colonne3
-FROM nom_table;
-======================================================*/
 
 -- QUESTION 5: Donner le nom et le prénom des employés de l'entreprise
 
@@ -56,12 +34,6 @@ FROM Employes
 SELECT Nomproduit, prixunitaire,Description
 FROM Produits
 
-/*======================================================*/
-/* Fonctionnalité 4: Sélectionner des valeurs distinctes
-Syntaxe générale:
-SELECT DISTINCT nom_colonne
-FROM nom_table;
-======================================================*/
 
 -- QUESTION 7: Donner les différentes dates auxquelles des ventes ont été réalisées
 SELECT DISTINCT *
@@ -71,17 +43,7 @@ FROM Ventes;
 SELECT DISTINCT Nom, Prenom
 FROM Employes
 
-/*==========================================================================================*/
-/*                 Maîtriser la clause WHERE POUR FILTRER suivant des conditions           */
-/*==========================================================================================*/
 
-/*======================================================*/
-/* Fonctionnalité 6: Filtrer suivant une condition
-Syntaxe générale:
-SELECT nom_colonne
-FROM nom_table
-WHERE condition;
-======================================================*/
 -- Liste produit vendu 
 SELECT *
 FROM Produits
@@ -120,36 +82,17 @@ WHERE FournisseurID = 13;
 
 
 
-/*======================================================*/
-/* Fonctionnalité 7: Utilisation de plusieurs conditions avec AND et OR
-Syntaxe générale:
-SELECT nom_colonne
-FROM nom_table
-WHERE condition1 AND/OR condition2;
-======================================================*/
+
 -- Liste des produits vendu par le fournisseur 13 ou par le fournisseur 11
 SELECT *
 FROM Produits
 WHERE FournisseurID=13 OR FournisseurID=11
 
-/*======================================================*/
-/* Fonctionnalité 8: Utilisation de IN dans la clause WHERE
-Syntaxe générale:
-SELECT nom_colonne
-FROM nom_table
-WHERE nom_colonne IN (valeur1, valeur2, ...);
-======================================================*/
+
 SELECT *
 FROM Produits
 WHERE FournisseurID IN (13, 15, 55, 45, 89, 88);
 
-/*======================================================*/
-/* Fonctionnalité 9: Utilisation de BETWEEN dans la clause WHERE
-Syntaxe générale:
-SELECT nom_colonne
-FROM nom_table
-WHERE nom_colonne BETWEEN valeur1 AND valeur2;
-======================================================*/
 
 -- Sélectionner les ventes réalisées entre le 1er janvier 2021 et le 31 décembre 2023
 SELECT *
@@ -157,13 +100,7 @@ FROM Ventes
 WHERE dateVente BETWEEN "2021-01-10" AND "2021-03-31";
 
 
-/*======================================================*/
-/* Fonctionnalité 10: Utilisation de LIKE dans la clause WHERE
-Syntaxe générale:
-SELECT nom_colonne 
-FROM nom_table 
-WHERE nom_colonne LIKE 'motif';
-======================================================*/
+
 -- Nom des clients qui commencent par la lettre c
 SELECT *
 FROM Clients
@@ -194,16 +131,15 @@ FROM Produits
 WHERE Nomproduit LIKE "n%";
 
 -- Donner la liste des produits qui contiennent la lettre 'a'
+SELECT *
+FROM Produits
+WHERE Nomproduit LIKE "%a%";
+
 -- Donner la liste des produits commençant par 'N' et finissant par 'x'
 
-/*==========================================================================================
-                 Maîtriser la clause ORDER BY POUR CLASSER
-Syntaxe générale:
-SELECT nom_colonne
-FROM nom_table
-WHERE condition
-ORDER BY nom_colonne [ASC | DESC], autre_nom_colonne [ASC | DESC], ...;
-==========================================================================================*/
+SELECT *
+FROM Produits
+WHERE Nomproduit LIKE "n%x";
 
 -- Donner la liste des produits du moins coûteux au plus coûteux
 SELECT *
