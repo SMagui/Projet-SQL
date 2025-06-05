@@ -145,15 +145,7 @@ HAVING NbAchat > 2;
 - VS Code (édition et exécution de scripts SQL)
 - PostgreSQL / DBeaver (exportable)
 
----
-
-## 👤 Auteur
-
-Projet conçu et réalisé par **SMagui**  
-🎓 Diplômé Data Analyst – En cours de Master Data Engineering  
-🔗 [GitHub](https://github.com/SMagui)
-
----
+--
 
 ## 📌 Recommandé pour
 
